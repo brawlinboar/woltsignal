@@ -1,0 +1,17 @@
+channel,origin,card_group,txns,cards,district_value,store_value,store_share_pct,non_store_value,lift_to_best,lift_to_global,status
+contactless,local,classic,942,522,52128.69,32347.33,62.05,19781.36,10598.28,7907.51,sized
+contactless,elsewhere,classic,952,654,57477.82,42664.43,74.23,14813.40,4688.0,1721.12,sized
+mobile,elsewhere,premium,346,264,20877.58,15632.52,74.88,5245.06,1567.23,489.57,sized
+mobile,local,premium,143,79,8207.74,5770.63,70.31,2437.11,991.23,567.56,sized
+mobile,local,classic,2675,1335,127023.65,104060.68,81.92,22962.97,586.26,0.0,sized
+mobile,elsewhere,classic,1782,1168,105075.36,86565.10,82.38,18510.26,0.0,0.0,sized
+contactless,local,other,12,9,561.39,469.07,83.56,92.31,,,not sized (<100 txns)
+other,elsewhere,classic,36,29,2488.72,2017.02,81.05,471.70,,,not sized (<100 txns)
+other,elsewhere,other,1,1,138.02,138.02,100.0,0.00,,,not sized (<100 txns)
+mobile,elsewhere,other,18,16,1216.82,947.58,77.87,269.24,,,not sized (<100 txns)
+contactless,local,premium,28,18,1637.07,1145.55,69.98,491.52,,,not sized (<100 txns)
+other,elsewhere,premium,9,9,437.26,379.65,86.82,57.61,,,not sized (<100 txns)
+contactless,elsewhere,other,22,18,1390.64,887.99,63.85,502.66,,,not sized (<100 txns)
+contactless,elsewhere,premium,86,65,6568.57,4234.92,64.47,2333.65,,,not sized (<100 txns)
+mobile,local,other,16,13,794.54,467.32,58.82,327.22,,,not sized (<100 txns)
+other,local,classic,29,24,1614.16,1614.16,100.0,0.00,,,not sized (<100 txns)
