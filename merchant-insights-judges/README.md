@@ -42,31 +42,24 @@ A prototype for one merchant. It turns anonymised Visa DATASPRINT card transacti
 
 Python 3.11 or newer. No Poetry. Dependencies are pinned in `requirements.txt`. The virtual environment is created on your machine and is not part of the repository.
 
-`final.py` only opens the demo at <http://127.0.0.1:8502>. It does not build the tables. If `data/marts_final` is already in this folder, skip the build. On Windows, close the app before a build: it keeps those files open, and Windows will not let the build replace them.
+Do these in order: install, build the Kraków tables, then open the app. `final.py` does not build anything.
 
-### Mac
+### 1. Install
 
-Double-click `install.command`. Terminal installs the packages and prints `pinned-ok`. It does not open the app. Then, in that same folder:
+Mac: double-click `install.command`. Terminal installs the packages and prints `pinned-ok`. It does not open the app.
 
-```bash
-.venv/bin/python final.py
-```
-
-### Windows
-
-Do not double-click `install.command`. Open Command Prompt in this folder and run:
+Windows: do not double-click `install.command`. Open Command Prompt in this folder and run:
 
 ```bat
 py -3 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
-.venv\Scripts\python final.py
 ```
 
 If `py` is not recognized, install Python 3.11 or newer from python.org and tick **Add python.exe to PATH**, then run the same lines again. Use `python` instead of `py -3` if that is the command that prints a version of 3.11 or higher.
 
-### Build the Kraków marts (about 5 minutes)
+### 2. Build the Kraków marts (about 5 minutes)
 
-Only if `data/marts_final` is missing. Use the sample file, `datasprint_sample_data.parquet`.
+Do this before `final.py`. Skip it only when `data/marts_final` is already in this folder. Use the sample file, `datasprint_sample_data.parquet`. On Windows, close the app first if it is open: it keeps those files open, and Windows will not let the build replace them.
 
 Mac:
 
@@ -81,6 +74,22 @@ Windows, in PowerShell, from this folder:
 ```
 
 Replace `YourName` with the account folder on that computer.
+
+### 3. Open the app
+
+Mac:
+
+```bash
+.venv/bin/python final.py
+```
+
+Windows, in PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe final.py
+```
+
+The demo is at <http://127.0.0.1:8502>.
 
 ### National build (not the judges' demo)
 
