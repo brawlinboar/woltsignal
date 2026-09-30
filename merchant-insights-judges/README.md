@@ -40,38 +40,63 @@ A prototype for one merchant. It turns anonymised Visa DATASPRINT card transacti
 
 ## Setup
 
-Python 3.12. No Poetry. Dependencies are pinned in `requirements.txt`. The virtual environment is created on your machine and is not part of the repository.
+Python 3.11 or newer. No Poetry. Dependencies are pinned in `requirements.txt`. The virtual environment is created on your machine and is not part of the repository.
+
+`final.py` only opens the demo at <http://127.0.0.1:8502>. It does not build the tables. If `data/marts_final` is already in this folder, skip the build. On Windows, close the app before a build: it keeps those files open, and Windows will not let the build replace them.
+
+### Mac
+
+Double-click `install.command`. Terminal installs the packages and prints `pinned-ok`. It does not open the app. Then, in that same folder:
 
 ```bash
-./install.command
 .venv/bin/python final.py
 ```
 
-`final.py` opens the Kraków demo at <http://127.0.0.1:8502>. It does not rebuild the marts.
+### Windows
 
-On Windows, from this folder:
+Do not double-click `install.command`. Open Command Prompt in this folder and run:
 
 ```bat
-py -3.12 -m venv .venv
-.venv\Scripts\pip install -r requirements.txt
+py -3 -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python final.py
 ```
 
+If `py` is not recognized, install Python 3.11 or newer from python.org and tick **Add python.exe to PATH**, then run the same lines again. Use `python` instead of `py -3` if that is the command that prints a version of 3.11 or higher.
+
 ### Build the Kraków marts (about 5 minutes)
 
-Only if `data/marts_final` is missing:
+Only if `data/marts_final` is missing. Use the sample file, `datasprint_sample_data.parquet`.
+
+Mac:
 
 ```bash
-.venv/bin/python pipeline/build_marts_final.py --file /path/to/data.parquet --out data/marts_final
+.venv/bin/python pipeline/build_marts_final.py --file /Users/YourName/Downloads/datasprint_sample_data.parquet --out data/marts_final
 ```
+
+Windows, in PowerShell, from this folder:
+
+```powershell
+.\.venv\Scripts\python.exe pipeline\build_marts_final.py --file "C:/Users/YourName/Downloads/datasprint_sample_data.parquet" --out data\marts_final
+```
+
+Replace `YourName` with the account folder on that computer.
 
 ### National build (not the judges' demo)
 
+This writes `data/marts` and takes about an hour and a half on the sample file. The app opened by `final.py` does not load it.
+
+Mac:
+
 ```bash
-.venv/bin/python national.py --file /path/to/data.parquet
+.venv/bin/python national.py --file /Users/YourName/Downloads/datasprint_sample_data.parquet
 ```
 
-That writes `data/marts` and is the long run. The app opened by `final.py` does not load it.
+Windows:
+
+```powershell
+.\.venv\Scripts\python.exe national.py --file "C:/Users/YourName/Downloads/datasprint_sample_data.parquet"
+```
 
 ## What is aggregated
 
